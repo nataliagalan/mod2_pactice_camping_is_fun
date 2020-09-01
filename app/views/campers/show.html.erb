@@ -8,7 +8,7 @@
 <h4>Age: <%= @camper.age %></h4>
 <h4>Signed up for:</h4>
 <ul>
-<% @camper.activities.each do |activity| %>
+<% @camper.activities.uniq.each do |activity| %>
    
    <li> <%= link_to activity.name, activity_path(activity) %> </li>
 <% end %>
