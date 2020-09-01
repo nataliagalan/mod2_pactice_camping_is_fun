@@ -8,10 +8,10 @@
 </ul>
 
 <%= form_for @signup do |f| %>
-    <%= f.label :name, "Choose a camper:" %>
+    <%= f.label :camper_id, "Choose a camper:" %>
     <%= f.collection_select(:camper_id, @campers, :id, :name) %>
     <br><br>
-    <%= f.label :name, "Choose an activity:" %>
+    <%= f.label :activity_id, "Choose an activity:" %>
     <%= f.collection_select(:activity_id, @activities, :id, :name) %>
     <br><br>
     <%= f.label :hour, "Enter activity time (hour 0-23)" %>
