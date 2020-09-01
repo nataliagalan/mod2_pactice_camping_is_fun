@@ -2,3 +2,9 @@
 
 <h4>Name: <%= @activity.name %></h4>
 <h4>Difficulty: <%= @activity.difficulty %></h4>
+<br>
+<%= button_to "Back to Activity Index", activities_path, method: :get %>
+<br>
+<%= button_to "Signup for New Activity", new_camper_activity_path, method: :get %>
+<br>
+<%= button_to "Back to Camper Index", campers_path, method: :get %>

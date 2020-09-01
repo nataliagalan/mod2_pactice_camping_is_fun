@@ -2,16 +2,12 @@
 <ul>
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-   <li> <%= error %> </li>
+   <li style="color: red"><%= error %> </li>
     <% end %>
 <% end %>
 </ul>
 <br>
-<ul>
-<% if flash[:success] %>
-   <li> <%= flash[:success] %> </li>
-    <% end %>
-</ul>
+
 <%= form_for @camper do |f| %>
 
     <%= f.label :name, "Enter camper name:" %>
@@ -23,3 +19,5 @@
     <%= f.submit value = "Register Camper" %>
   
 <% end %>
+<br>
+<%= button_to "Back to Camper Index", campers_path, method: :get %>
