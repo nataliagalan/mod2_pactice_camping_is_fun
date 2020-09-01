@@ -1,7 +1,7 @@
 <h1>Signup for activities!</h1>
 <ul>
 <% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
+    <% flash[:errors].uniq.each do |error| %>
    <li style="color: red"> <%= error %> </li>
     <% end %>
 <% end %>
@@ -22,5 +22,6 @@
   
 <% end %>
 <br>
-<%= button_to "Back to Activity Index", activities_path, method: :get %>
+ <%# button_to "Back to Activity Index", activities_path, method: :get %>
+<button><%= link_to "Back to Activity Index", activities_path, {style: "text-decoration: none"} %></button>
 
