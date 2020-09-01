@@ -1,10 +1,16 @@
 <h1>Camper Profile</h1>
 
+<% if flash[:success] %>
+   <h3> <%= flash[:success] %> </h3>
+    <% end %>
+
 <h4>Name: <%= @camper.name %></h4>
 <h4>Age: <%= @camper.age %></h4>
 <h4>Signed up for:</h4>
 <ul>
 <% @camper.activities.each do |activity| %>
-   <li> <%= activity.name %> </li>
+   <li> <%= link_to activity.name, activity_path(activity) %> </li>
 <% end %>
 </ul>
+<br>
+<%= button_to "Signup for New Activity", new_camper_activity_path, method: :get %>

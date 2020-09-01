@@ -5,3 +5,7 @@
     <li><%= link_to camper.name, camper_path(camper) %></li>
   <% end %>
 </ul>
+<br>
+<%= button_to "Register New Camper", new_camper_path, method: :get %>
+<br>
+<%= button_to "Check out Activity Index", activities_path, method: :get %>
