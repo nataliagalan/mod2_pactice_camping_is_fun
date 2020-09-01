@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroying old data"
+CamperActivity.destroy_all
+Camper.destroy_all
+Activity.destroy_all
 
-
+puts "seeding campers"
 Camper.create(name: 'Caitlin',age: 8)
 Camper.create(name: 'Lizzie', age: 9)
 Camper.create(name: 'Tom', age: 12)
@@ -16,7 +20,7 @@ Camper.create(name: 'Peter',age: 10)
 Camper.create(name: 'Amanda',age: 9)
 Camper.create(name: 'Nick',age: 12)
 
-
+puts "seeding activities"
 Activity.create(name: 'Archery', difficulty: 2)
 Activity.create(name: 'Swimming', difficulty: 3)
 Activity.create(name: 'Photography', difficulty: 2)
@@ -27,12 +31,12 @@ Activity.create(name: 'Canoeing', difficulty: 3)
 Activity.create(name: 'Windsurfing', difficulty: 5)
 
 
-# uncomment below to generate 50 join table instances
-# 50.times do 
-  # Signup.create(camper_id: Camper.all.sample.id, activity_id: Activity.all.sample.id, time: rand(0..24))
-# end 
+puts "seeding 50 join table instances"
+50.times do 
+  CamperActivity.create(camper_id: Camper.all.sample.id, activity_id: Activity.all.sample.id, hour: rand(0..24))
+end 
 
-
+puts "done"
 
 
 

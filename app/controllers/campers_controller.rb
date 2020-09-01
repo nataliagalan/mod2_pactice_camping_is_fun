@@ -1,5 +1,11 @@
 class CampersController < ApplicationController
+
   def index
     @campers = Camper.all
   end
-end
+
+  def show
+    @camper = Camper.find(params[:id])
+  end
+
+end # end of cc class
